@@ -28,6 +28,14 @@ def getFirebaseKeys():
 
     return
 
+@app.route('/findbook', methods=['GET'])
+def getBookDetail():
+    if request.method == 'GET':
+        typeparam = request.args.get('type', default=None, type=str)
+        parameter = request.args.get('item', default=None, type=str)
+
+        return(appClass.getBookDetail(typeparam, parameter))
+
 if __name__ == '__main__':
     app.run()
 
