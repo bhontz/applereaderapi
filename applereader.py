@@ -15,7 +15,7 @@ class AppleReader():
 
         project_folder = os.path.expanduser(self.server_root)  # ON WEB SERVER: ~/applereaderapi
         load_dotenv(os.path.join(project_folder, '.env'))
-        d = json.loads('{"type": "service_account","project_id": "applereadergsoc","client_email": "applereaderapi@applereadergsoc.iam.gserviceaccount.com","auth_uri": "https://accounts.google.com/o/oauth2/auth","token_uri": "https://oauth2.googleapis.com/token","auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs","client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/applereaderapi%40applereadergsoc.iam.gserviceaccount.com"}')
+        d = json.loads('{"type": "service_account","project_id": "applereadergsoc","client_email": "applereadergsoc@applereadergsoc.iam.gserviceaccount.com","auth_uri": "https://accounts.google.com/o/oauth2/auth","token_uri": "https://oauth2.googleapis.com/token","auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs","client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/applereadergsoc%40applereadergsoc.iam.gserviceaccount.com"}')
 
         # Secret stuff here ...
         d["client_id"] = os.getenv("CLIENTID")
@@ -279,4 +279,4 @@ if __name__ == '__main__':
     # print("Returning items: {}".format(obj.getFirebaseActivities("proudyellowworm")))
     # isbn code that is in both google and lexile: 9780451526342
     # isbn code only in google: 9780671738433
-    print("Returning items: {}".format(obj.getBookDetail("isbn", "9780451526342")))
+    # print("Returning items: {}".format(obj.getBookDetail("isbn", "9780451526342")))
