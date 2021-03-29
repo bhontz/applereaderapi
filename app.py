@@ -34,7 +34,15 @@ def getBookDetail():
         typeparam = request.args.get('type', default=None, type=str)
         parameter = request.args.get('item', default=None, type=str)
 
-        return(appClass.getBookDetail(typeparam, parameter))
+        return appClass.getBookDetail(typeparam, parameter)
+
+@app.route('/activities', methods=['GET'])
+def getFireBaseActivities():
+    if request.method == 'GET':
+        username = request.args.get('username', default=None, type=str)
+
+        return appClass.getFirebaseActivities(username)
+
 
 if __name__ == '__main__':
     app.run()

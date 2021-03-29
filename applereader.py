@@ -172,7 +172,7 @@ class AppleReader():
 
             # d["items"] = self.lstReturnedItems
             # filter out usernames that are already within the database ..
-            d["items"] = [x for x in self.lstReturnedItems if x not in lstCurrentUsers]
+            d["items"] = sorted([x for x in self.lstReturnedItems if x not in lstCurrentUsers])
 
         return d
 
@@ -204,7 +204,7 @@ class AppleReader():
                 # response.status_code should equal 200 or its an error on write !
                 # didn't engineer a way of returning errors on list returns outside of an empty list
 
-        return self.__getFirebaseActivities()  # refetch the keys after the update that occurred above
+        return json.dumps(self.__getFirebaseActivities())  # refetch the keys after the update that occurred above
 
     def getBookDetail(self, typeparam, parameter):
         """
@@ -275,7 +275,7 @@ if __name__ == '__main__':
         Some testing going on here ...
     """
     obj = AppleReader()
-    # print("RETURNING items: {}".format(obj.getUserName("one,two,three,four")))
+    print("RETURNING items: {}".format(obj.getUserName("proud,yellow,worm,37")))
     # print("Returning items: {}".format(obj.getFirebaseActivities("proudyellowworm")))
     # isbn code that is in both google and lexile: 9780451526342
     # isbn code only in google: 9780671738433
