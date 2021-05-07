@@ -3,3 +3,4 @@ google-auth==1.27.1
 google-cloud-vision==2.2.0
 googleapis-common-protos==1.53.0
 python-dotenv==0.15.0
+flask-cors==3.0.10

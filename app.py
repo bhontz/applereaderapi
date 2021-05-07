@@ -2,9 +2,11 @@
     App entry point
 """
 from flask import Flask, request
+from flask_cors import CORS   # gets around Access-Control-Original errors from localhost app testing
 from applereader import AppleReader
 
 app = Flask(__name__)
+CORS(app)
 appClass = AppleReader()
 
 # TODO: need book search call combining the google and lexile apis

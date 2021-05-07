@@ -155,7 +155,7 @@ class AppleReader():
         if items:
 
             lstCurrentUsers = self.__getFirebaseUsernames()
-            print(lstCurrentUsers)
+            # print(lstCurrentUsers)
 
             lstItemsIn = items.split(",")
             if len(lstItemsIn) > 0:
@@ -275,8 +275,10 @@ if __name__ == '__main__':
         Some testing going on here ...
     """
     obj = AppleReader()
-    print("RETURNING items: {}".format(obj.getUserName("proud,yellow,worm,37")))
+    # print("RETURNING items: {}".format(obj.getUserName("proud,yellow,worm,37")))
     # print("Returning items: {}".format(obj.getFirebaseActivities("proudyellowworm")))
+    print("Returning items: {}".format(obj.getFirebaseActivities("sleepypurpleturtle")))
+
     # isbn code that is in both google and lexile: 9780451526342
     # isbn code only in google: 9780671738433
     # print("Returning items: {}".format(obj.getBookDetail("isbn", "9780451526342")))
